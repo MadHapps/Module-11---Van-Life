@@ -2,11 +2,32 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(40, 40, 40, 0.87);
+  background-color: #F5F5F5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+}
+
+.wip-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  padding: 1em;
+  background-color: rgba(255, 0, 0, 0.438);
+  color: #F5F5F5;
+  border: 3px solid rgba(255, 100, 100, 0.438);
+  font-weight: 100;
+  border-radius: .75em;
+  margin: 18px;
 }
