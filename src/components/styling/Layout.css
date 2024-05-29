@@ -1,0 +1,10 @@
+:root {
+    --100vh: 100vh;
+    --100dvh: 100dvh;
+  }
+
+div.page-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: calc(var(--100dvh) - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+}
