@@ -2,23 +2,39 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 2em;
+    padding: 1.75em 3em;
     border-bottom: 2px solid black;
     margin-bottom: 1em;
 }
 
 nav .logo {
     font-size: 1.584em;
+    color: #000000;
+    cursor: pointer;
 }
 
 nav .link-wrapper {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 1em;
+    height: 1.5em;
 }
 
 nav a {
     font-size: 1em;
     font-weight: 700;
     text-decoration: none;
+    color: #4D4D4D;
 }
 
+nav .link-wrapper > a:hover,
+nav .link-wrapper > a:focus        {
+    color: #161616;
+    outline: none;
+    border-bottom: 2px solid #000000;
+}
+
+nav a:active {
+    opacity: .5;
+}

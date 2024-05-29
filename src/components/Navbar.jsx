@@ -5,12 +5,12 @@ export default function Navbar() {
 
     return (
         <nav>
-            <h1 role="banner" className="logo">
+            <Link to="/" className="logo" role="banner">
                 #VANLIFE
-            </h1>
+            </Link>
             <div className="link-wrapper">
-                <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
+                <Link to="/vans">Vans</Link>
             </div>
         </nav>
     )
