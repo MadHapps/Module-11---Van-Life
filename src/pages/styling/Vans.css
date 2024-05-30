@@ -1,0 +1,8 @@
+.van-page-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75em;
+    align-items: center;
+    justify-content: center;
+    padding-inline: .5em;
+}
