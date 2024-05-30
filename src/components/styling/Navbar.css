@@ -32,7 +32,7 @@ nav .link-wrapper > a:hover,
 nav .link-wrapper > a:focus        {
     color: #161616;
     outline: none;
-    border-bottom: 2px solid var(--accent-primary);
+    border-bottom: 2px solid var(--accent-dark);
 }
 
 nav a:active {
