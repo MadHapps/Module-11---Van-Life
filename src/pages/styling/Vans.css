@@ -10,6 +10,7 @@ div.van-page-wrapper {
 div.van-filter-options {
     display: flex;
     flex-direction: column;
+    padding-inline: .5em;
     gap: 1em;
 }
 
@@ -19,6 +20,7 @@ div.van-filter-options > h2 {
 
 div.van-filter-options > ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.75em;
     list-style: none;
 }
