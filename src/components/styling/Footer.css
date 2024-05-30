@@ -1,5 +1,9 @@
 footer {
     place-self: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.75em;
     width: 100%;
     display: flex;
     align-items: center;
@@ -8,5 +12,16 @@ footer {
     color: #F5F5F5;
     font-size: .875em;
     font-weight: 600;
-    padding-block: 1.75em;
+    padding-top: 1.75em;
 }
+
+.wip-wrapper {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: .5em 1em;
+    background-color: rgba(255, 0, 0, 0.438);
+    color: #F5F5F5;
+    border: 3px solid rgba(255, 100, 100, 0.438);
+    font-weight: 100;
+  }
