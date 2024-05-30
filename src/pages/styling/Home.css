@@ -11,7 +11,7 @@
     -o-background-size: cover;
     background-size: cover;
     min-height: 350px;
-    color: white;
+    color: var(--font-light);
     padding: 45px 23px;
 }
 
@@ -29,13 +29,13 @@
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    background-color: #FF8C38;
+    background-color: var(--accent-dark);
     border: none;
     width: 75%;
     max-width: 480px;
     margin-top: 27px;
     padding-block: .75rem;
-    color: white;
+    color: var(--font-light);
     font-weight: 700;
     border-radius: 5px;
     cursor: pointer;

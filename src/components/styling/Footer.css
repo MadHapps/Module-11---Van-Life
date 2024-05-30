@@ -8,8 +8,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #252525;
-    color: #F5F5F5;
+    background-color: var(--bg-dark);
+    color: var(--font-light);
     font-size: .875em;
     font-weight: 600;
     padding-top: 1.75em;

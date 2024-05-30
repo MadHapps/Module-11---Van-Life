@@ -1,8 +1,19 @@
 :root {
+/* Custom Colors */
+--bg-light: #FFF7ED;
+--bg-dark: #252525;
+--font-light: #FFFFFF;
+--font-medium: #4D4D4D;
+--font-dark: #161616;
+--accent-dark: #FF8C38;
+--accent-medium: #FFCC8D;
+--accent-light: #FFDDB2;
+--accent-lightest: #FFEAD0;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  color: #161616;
-  background-color: #F5F5F5;
+  color: var(--font-dark);
+  background-color: var(--bg-light);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

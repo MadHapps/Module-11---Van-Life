@@ -3,7 +3,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.75em 3em;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--bg-dark);
 }
 
 nav .logo {
@@ -14,6 +14,7 @@ nav .logo {
 
 nav .link-wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 1em;
@@ -24,14 +25,14 @@ nav a {
     font-size: 1em;
     font-weight: 700;
     text-decoration: none;
-    color: #4D4D4D;
+    color: var(--font-medium);
 }
 
 nav .link-wrapper > a:hover,
 nav .link-wrapper > a:focus        {
     color: #161616;
     outline: none;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid var(--accent-primary);
 }
 
 nav a:active {
