@@ -9,7 +9,7 @@ export default function Vans() {
     fetch("/api/vans")
       .then((res) => res.json())
       .then((data) => {
-        setVans(data.vans);
+        setTimeout(() => (setVans(data.vans)), 1000)
       });
   }, []);
 
@@ -25,7 +25,7 @@ export default function Vans() {
           price={van.price}
           type={van.type}
         />
-      )) : <h3 className="van-cards-loading">Retrieving Vans...</h3>}
+      )) : <h3 className="van-cards-loading">Retrieving Vans</h3>}
     </div>
   );
 }
