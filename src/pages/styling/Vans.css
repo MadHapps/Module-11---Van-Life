@@ -1,4 +1,44 @@
-.van-page-wrapper {
+div.van-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3.5em;
+}
+
+div.van-filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+div.van-filter-options > h2 {
+    font-size: 2em;
+}
+
+div.van-filter-options > ul {
+    display: flex;
+    gap: 1.75em;
+    list-style: none;
+}
+
+ul > a.link-button {
+    color: var(--font-medium);
+    align-self: center;
+    border-radius: 0;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    border-bottom: 1px solid var(--font-medium);
+}
+
+div.van-filter-options .option {
+    background-color: red;
+    border: 1px solid red;
+}
+
+.van-card-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 0 1.5em;
