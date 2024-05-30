@@ -1,0 +1,72 @@
+.van-card-wrapper {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    margin-top: 1.5em;
+    width: 15em;
+    min-width: 300px
+}
+
+.card-img {
+    width: 100%;
+    border-radius: .5em;
+}
+
+.card-text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-price {
+    position: relative;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+.card-price::after {
+    content: '/day';
+    position: absolute;
+    bottom: -1em;
+    right: 0;
+    font-size: .75em;
+    font-weight: 300;
+}
+
+.card-tag {
+    width: fit-content;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: .75rem 1.375rem;
+    background-color: var(--accent-lightest);
+    color: var(--font-medium);
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.default {
+    font-weight: 500;
+}
+
+.filter {
+    background-color: var(--accent-lightest);
+    color: var(--font-medium)
+}
+
+.simple {
+    background-color: #E17654;
+    color: var(--accent-lightest);
+}
+
+.luxury {
+    background-color: #161616;
+    color: var(--accent-lightest)
+}
+
+.rugged {
+    background-color: #115E59;
+    color: var(--accent-lightest);
+}
