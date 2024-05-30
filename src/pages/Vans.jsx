@@ -17,7 +17,7 @@ export default function Vans() {
 
   return (
     <div className="van-page-wrapper">
-      {vans && vans.map((van) => (
+      {vans ? vans.map((van) => (
         <VanCard
           key={van.id}
           image={van.imageUrl}
@@ -25,7 +25,7 @@ export default function Vans() {
           price={van.price}
           type={van.type}
         />
-      ))}
+      )) : <h3 className="van-cards-loading">Retrieving Vans...</h3>}
     </div>
   );
 }

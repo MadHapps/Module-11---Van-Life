@@ -6,3 +6,7 @@
     justify-content: center;
     padding-inline: .5em;
 }
+
+.van-cards-loading {
+    margin-top: 2em;
+}
