@@ -4,8 +4,8 @@
     flex-direction: column;
     gap: .5em;
     margin-top: 1.5em;
-    width: 15em;
-    min-width: 300px
+    width: 25%;
+    min-width: 280px;
 }
 
 .card-img {
