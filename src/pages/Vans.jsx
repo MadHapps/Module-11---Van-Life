@@ -3,14 +3,20 @@ import "./styling/Vans.css";
 import VanCard from "../components/VanCard";
 
 export default function Vans() {
-  const [vans, setVans] = useState();
+  const [vans, setVans] = useState(null);
 
   useEffect(() => {
-    fetch("/api/vans")
-      .then((res) => res.json())
-      .then((data) => {
-        setTimeout(() => setVans(data.vans), 638);
-      });
+    const fetchVans = async () => {
+      try {
+        const response = await fetch("/api/vans");
+        const data = await response.json();
+        setTimeout(() => setVans(data.vans), 918); // Delay for 638ms
+      } catch (error) {
+        console.error("Error fetching vans:", error);
+      }
+    };
+
+    fetchVans();
   }, []);
 
   return (
@@ -36,7 +42,7 @@ export default function Vans() {
             />
           ))
         ) : (
-          <h3 className="van-cards-loading">Retrieving Vans</h3> //...elipsis animated in css
+          <h3 className="van-cards-loading">Retrieving Vans</h3>
         )}
       </div>
     </div>
