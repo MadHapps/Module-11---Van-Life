@@ -88,7 +88,7 @@ export default function Vans() {
             );
           })
         ) : (
-          <h3 className="van-cards-loading">Retrieving Vans...</h3>
+          <h3 className="van-cards-loading">Retrieving Vans</h3>
         )}
       </div>
     </div>
