@@ -6,6 +6,8 @@
     margin-top: 1.5em;
     width: 25%;
     min-width: 280px;
+    text-decoration: none;
+    color: var(--font-dark)
 }
 
 .card-img {

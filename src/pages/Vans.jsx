@@ -80,6 +80,7 @@ export default function Vans() {
             return (
               <VanCard
                 key={van.id}
+                id={van.id}
                 image={van.imageUrl}
                 name={van.name}
                 price={van.price}
