@@ -84,7 +84,9 @@ export default function Vans() {
                 image={van.imageUrl}
                 name={van.name}
                 price={van.price}
+                description={van.description}
                 type={van.type}
+                details={false}
               />
             );
           })
