@@ -15,7 +15,7 @@ export default function VanDetail() {
       setVan(data.vans);
     };
 
-    console.log(van)
+    console.log(van);
 
     fetchVan();
   }, [id]);

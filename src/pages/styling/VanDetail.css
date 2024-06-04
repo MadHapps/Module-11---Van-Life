@@ -1,11 +1,11 @@
 .van-detail-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-dark);
-    color: var(--font-light);
-    padding: 1em;
-    margin: 1em;;
-    border: 4px solid var(--accent-dark);
-    border-radius: .5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-dark);
+  color: var(--font-light);
+  padding: 1em;
+  margin: 1em;
+  border: 4px solid var(--accent-dark);
+  border-radius: 0.5em;
 }

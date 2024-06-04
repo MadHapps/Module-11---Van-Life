@@ -8,13 +8,13 @@ import VanDetail from "./pages/VanDetail";
 
 function App() {
   return (
-    <Router> 
+    <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />}  />  
-          <Route path="/about" element={<About />}  />  
-          <Route path="/vans" element={<Vans />}  />
-          <Route path="/vans/:id" element={<VanDetail />} />  
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/vans" element={<Vans />} />
+          <Route path="/vans/:id" element={<VanDetail />} />
         </Routes>
       </Layout>
     </Router>

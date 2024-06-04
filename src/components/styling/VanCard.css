@@ -1,92 +1,90 @@
 .van-card {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    gap: .5em;
-    margin-top: 1.5em;
-    width: 25%;
-    min-width: 280px;
-    text-decoration: none;
-    color: var(--font-dark)
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 1.5em;
+  width: 25%;
+  min-width: 280px;
+  text-decoration: none;
+  color: var(--font-dark);
 }
 
 .details {
-    width: 100%;
-    margin-inline: auto;
-    padding-inline: clamp(.5em, calc(20vw - 5em), 10em);
-    gap: 1em;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(0.5em, calc(20vw - 5em), 10em);
+  gap: 1em;
 
+  .card-img {
+    align-self: center;
+  }
 
-    .card-img {
-        align-self: center;
-    }
+  .card-title {
+    font-size: 2em;
+  }
 
-    .card-title {
-        font-size: 2em;
-    }
-
-    .card-title-wrapper {
-        flex-direction: column;
-        align-items: start;
-        gap: .25em;
-    }
-
+  .card-title-wrapper {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.25em;
+  }
 }
 
 .card-img {
-    width: 100%;
-    border-radius: .5em;
+  width: 100%;
+  border-radius: 0.5em;
 }
 
 .card-title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card-price {
-    position: relative;
-    font-size: 1.25em;
-    font-weight: 700;
+  position: relative;
+  font-size: 1.25em;
+  font-weight: 700;
 }
 
 .card-price--after {
-    font-size: .85em;
+  font-size: 0.85em;
 }
 
 .card-tag {
-    width: fit-content;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    padding: .75rem 1.375rem;
-    background-color: var(--accent-lightest);
-    color: var(--font-medium);
-    font-weight: 600;
-    border-radius: 5px;
+  width: fit-content;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: 0.75rem 1.375rem;
+  background-color: var(--accent-lightest);
+  color: var(--font-medium);
+  font-weight: 600;
+  border-radius: 5px;
 }
 
 .default {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .filter {
-    background-color: var(--accent-lightest);
-    color: var(--font-medium)
+  background-color: var(--accent-lightest);
+  color: var(--font-medium);
 }
 
 .simple {
-    background-color: #E17654;
-    color: var(--accent-lightest);
+  background-color: #e17654;
+  color: var(--accent-lightest);
 }
 
 .luxury {
-    background-color: #161616;
-    color: var(--accent-lightest)
+  background-color: #161616;
+  color: var(--accent-lightest);
 }
 
 .rugged {
-    background-color: #115E59;
-    color: var(--accent-lightest);
+  background-color: #115e59;
+  color: var(--accent-lightest);
 }

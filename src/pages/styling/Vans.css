@@ -1,74 +1,75 @@
 div.van-page-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3.5em;
 }
 
 div.van-filter-options {
-    display: flex;
-    flex-direction: column;
-    padding-inline: .5em;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 0.5em;
+  gap: 1em;
 }
 
 div.van-filter-options > h2 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 div.van-filter-options > ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.75em;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75em;
+  list-style: none;
 }
 
 ul > a.link-button {
-    color: var(--font-medium);
-    align-self: center;
-    border-radius: 0;
-    width: fit-content;
-    height: fit-content;
-    padding: 0;
-    border-bottom: 1px solid var(--font-medium);
+  color: var(--font-medium);
+  align-self: center;
+  border-radius: 0;
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  border-bottom: 1px solid var(--font-medium);
 }
 
 div.van-filter-options .option {
-    background-color: red;
-    border: 1px solid red;
+  background-color: red;
+  border: 1px solid red;
 }
 
 .van-card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 1.5em;
-    align-items: center;
-    justify-content: center;
-    padding-inline: .5em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5em;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 0.5em;
 }
 
 .van-cards-loading {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
+/* elipsis & animation */
 .van-cards-loading::after {
-    content: '\00a0\00a0\00a0';
-    animation: progress-ellipsis 2s infinite;
+  content: "\00a0\00a0\00a0";
+  animation: progress-ellipsis 2s infinite;
 }
 
 @keyframes progress-ellipsis {
-    0% {
-        content: '\00a0\00a0\00a0';
-    }
-    30% {
-        content: '.\00a0\00a0';
-    }
-    60% {
-        content: '..\00a0';
-    }
-    90% {
-        content: '...';
-    }
+  0% {
+    content: "\00a0\00a0\00a0";
+  }
+  30% {
+    content: ".\00a0\00a0";
+  }
+  60% {
+    content: "..\00a0";
+  }
+  90% {
+    content: "...";
+  }
 }

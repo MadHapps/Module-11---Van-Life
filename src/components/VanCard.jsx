@@ -2,15 +2,26 @@
 import "./styling/VanCard.css";
 import { Link } from "react-router-dom";
 
-export default function VanCard({ id, image, name, price, description, type, onClick, details }) {
+export default function VanCard({
+  id,
+  image,
+  name,
+  price,
+  description,
+  type,
+  details,
+}) {
   const tag = type.charAt(0).toUpperCase() + type.slice(1);
 
   return (
-    <Link to={`/vans/${id}`} className={`van-card ${details ? 'details' : ''}`}>
+    <Link to={`/vans/${id}`} className={`van-card ${details ? "details" : ""}`}>
       <img className="card-img" src={image} />
       <div className="card-title-wrapper">
         <h3 className="card-title">{name}</h3>
-        <p className="card-price">${price}<span className="card-price--after">/day</span></p>
+        <p className="card-price">
+          ${price}
+          <span className="card-price--after">/day</span>
+        </p>
       </div>
       {details && <p className="card-description">{description}</p>}
       <p className={`card-tag ${type ? type : "default"}`}>{tag}</p>

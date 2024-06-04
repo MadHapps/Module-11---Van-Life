@@ -1,14 +1,14 @@
 :root {
-/* Custom Colors */
---bg-light: #FFF7ED;
---bg-dark: #252525;
---font-light: #FFFFFF;
---font-medium: #4D4D4D;
---font-dark: #161616;
---accent-dark: #FF8C38;
---accent-medium: #FFCC8D;
---accent-light: #FFDDB2;
---accent-lightest: #FFEAD0;
+  /* Custom Colors */
+  --bg-light: #fff7ed;
+  --bg-dark: #252525;
+  --font-light: #ffffff;
+  --font-medium: #4d4d4d;
+  --font-dark: #161616;
+  --accent-dark: #ff8c38;
+  --accent-medium: #ffcc8d;
+  --accent-light: #ffddb2;
+  --accent-lightest: #ffead0;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
