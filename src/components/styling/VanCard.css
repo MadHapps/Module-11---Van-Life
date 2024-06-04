@@ -11,10 +11,11 @@
 }
 
 .details {
-    width: 90%;
+    width: 100%;
     margin-inline: auto;
+    padding-inline: clamp(.5em, calc(20vw - 5em), 10em);
     gap: 1em;
-    padding: .5em;
+
 
     .card-img {
         align-self: center;
