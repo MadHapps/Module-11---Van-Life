@@ -10,12 +10,34 @@
     color: var(--font-dark)
 }
 
+.details {
+    width: 90%;
+    margin-inline: auto;
+    gap: 1em;
+    padding: .5em;
+
+    .card-img {
+        align-self: center;
+    }
+
+    .card-title {
+        font-size: 2em;
+    }
+
+    .card-title-wrapper {
+        flex-direction: column;
+        align-items: start;
+        gap: .25em;
+    }
+
+}
+
 .card-img {
     width: 100%;
     border-radius: .5em;
 }
 
-.card-text-wrapper {
+.card-title-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,13 +49,8 @@
     font-weight: 700;
 }
 
-.card-price::after {
-    content: '/day';
-    position: absolute;
-    bottom: -1em;
-    right: 0;
-    font-size: .75em;
-    font-weight: 300;
+.card-price--after {
+    font-size: .85em;
 }
 
 .card-tag {
