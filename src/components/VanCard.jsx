@@ -12,10 +12,11 @@ export default function VanCard({
   details,
 }) {
   const tag = type.charAt(0).toUpperCase() + type.slice(1);
+  const VanCard = details ? 'div' : Link;
 
   return (
-    <Link to={`/vans/${id}`} className={`van-card ${details ? "details" : ""}`}>
-      <img className="card-img" src={image} />
+    <VanCard to={`/vans/${id}`} className={`van-card ${details ? "details" : ""}`}>
+      <img className="card-img" src={image} alt={name} />
       <div className="card-title-wrapper">
         <h3 className="card-title">{name}</h3>
         <p className="card-price">
@@ -25,6 +26,6 @@ export default function VanCard({
       </div>
       {details && <p className="card-description">{description}</p>}
       <p className={`card-tag ${type ? type : "default"}`}>{tag}</p>
-    </Link>
+    </VanCard>
   );
 }
