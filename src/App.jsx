@@ -9,14 +9,14 @@ import VanDetail from "./pages/VanDetail";
 function App() {
   return (
     <Router>
-      <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/vans" element={<Vans />} />
-          <Route path="/vans/:id" element={<VanDetail />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/vans" element={<Vans />} />
+            <Route path="/vans/:id" element={<VanDetail />} />
+          </Route>
         </Routes>
-      </Layout>
     </Router>
   );
 }
