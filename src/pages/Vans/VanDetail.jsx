@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "./styling/VanDetail.css";
+import "../styling/VanDetail.css";
 import { useParams } from "react-router-dom";
-import VanCard from "../components/VanCard";
+import VanCard from "../../components/VanCard";
 
 export default function VanDetail() {
   const { id } = useParams();
