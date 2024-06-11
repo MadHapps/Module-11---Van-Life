@@ -2,8 +2,7 @@
 import "./styling/Footer.css";
 
 export default function Footer({ className }) {
-
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className={className}>
