@@ -33,8 +33,16 @@ nav .link-wrapper > a:focus {
   color: #161616;
   outline: none;
   border-bottom: 2px solid var(--accent-dark);
+  margin-bottom: -2px;
 }
 
 nav a:active {
   opacity: 0.5;
+}
+
+.isActive {
+  color: #161616;
+  outline: none;
+  border-bottom: 2px solid var(--accent-dark);
+  margin-bottom: -2px;
 }
