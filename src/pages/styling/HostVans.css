@@ -9,12 +9,11 @@ section > .host-vans-list {
 }
 
 ul > .list-card {
-  flex: 1 1 18em;
+  flex: 1 1 22em;
   padding: .25em;
   border: #282828;
   border-radius: 0.75em;
   background-color: #ffffff;
-  min-width: 15em;
   box-shadow: 0 0 8px -5px black;
 }
 
@@ -50,19 +49,19 @@ ul > .list-card {
   font-weight: 500;
 }
 
-@media (min-width: 36em) {
+@media (min-width: 47em) {
   ul > .list-card {
     max-width: calc(50% - 1em);
   }
 }
 
-@media (min-width: 58em) {
+@media (min-width: 70em) {
   ul > .list-card {
     max-width: calc(33.33% - 1em);
   }
 }
 
-@media (min-width: 77em) {
+@media (min-width: 89em) {
   ul > .list-card {
     max-width: calc(25% - 1em);
   }
