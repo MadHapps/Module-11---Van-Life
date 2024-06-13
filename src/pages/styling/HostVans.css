@@ -15,6 +15,7 @@ ul > .list-card {
   border-radius: 0.75em;
   background-color: #ffffff;
   min-width: 15em;
+  box-shadow: 0 0 8px -5px black;
 }
 
 .list-card > .link {
