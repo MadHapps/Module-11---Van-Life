@@ -34,7 +34,9 @@ export default function HostLayout() {
           </NavLink>
         </div>
       </nav>
-      <Outlet />
+      <section className="host-section-wrapper">
+        <Outlet />
+      </section>
     </>
   );
 }

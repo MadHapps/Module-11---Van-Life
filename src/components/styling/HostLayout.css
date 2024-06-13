@@ -1,3 +1,10 @@
 .host-nav-wrapper {
     
 }
+
+section.host-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}

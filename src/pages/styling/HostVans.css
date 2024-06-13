@@ -1,0 +1,68 @@
+section > .host-vans-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+section > .host-vans-list {
+  list-style-type: none;
+}
+
+ul > .list-card {
+  flex: 1 1 18em;
+  padding: 1em;
+  border: #282828;
+  border-radius: 0.75em;
+  background-color: #ffffff;
+  min-width: 15em;
+}
+
+.list-card > .link {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto;
+  gap: 0.15em 0.5em;
+  color: var(--font-dark);
+  text-decoration: none;
+}
+
+.list-card img {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  border-radius: 0.25em;
+}
+
+.list-card .title,
+.list-card .price {
+  grid-column: 2/-1;
+  justify-self: start;
+}
+
+.list-card .title {
+  align-self: end;
+}
+
+.list-card .price {
+  align-self: start;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+@media (min-width: 36em) {
+  ul > .list-card {
+    max-width: calc(50% - 1em);
+  }
+}
+
+@media (min-width: 58em) {
+  ul > .list-card {
+    max-width: calc(33.33% - 1em);
+  }
+}
+
+@media (min-width: 77em) {
+  ul > .list-card {
+    max-width: calc(25% - 1em);
+  }
+}
