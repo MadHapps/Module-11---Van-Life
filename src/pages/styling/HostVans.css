@@ -10,7 +10,7 @@ section > .host-vans-list {
 
 ul > .list-card {
   flex: 1 1 18em;
-  padding: 1em;
+  padding: .25em;
   border: #282828;
   border-radius: 0.75em;
   background-color: #ffffff;
@@ -30,7 +30,7 @@ ul > .list-card {
   width: 100%;
   grid-column: 1/2;
   grid-row: 1/-1;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
 }
 
 .list-card .title,
