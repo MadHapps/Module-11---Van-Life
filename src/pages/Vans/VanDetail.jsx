@@ -6,7 +6,6 @@ import VanCard from "../../components/VanCard";
 export default function VanDetail() {
   const { id } = useParams();
   const [van, setVan] = useState(null);
-  console.log(id);
 
   useEffect(() => {
     const fetchVan = async () => {
@@ -14,8 +13,6 @@ export default function VanDetail() {
       const data = await res.json();
       setVan(data.vans);
     };
-
-    console.log(van);
 
     fetchVan();
   }, [id]);
