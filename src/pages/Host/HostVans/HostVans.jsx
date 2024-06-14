@@ -1,4 +1,4 @@
-import "../styling/HostVans.css";
+import "../../styling/HostVans.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
