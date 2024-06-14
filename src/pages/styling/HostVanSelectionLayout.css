@@ -62,3 +62,8 @@ img.hvd-image {
     flex-direction: row;
     gap: 1em;
 }
+
+.hvd-subcontent {
+    grid-row: 3/4;
+    grid-column: 1/-1;
+}

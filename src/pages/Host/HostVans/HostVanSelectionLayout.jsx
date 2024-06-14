@@ -63,7 +63,9 @@ export default function HostVanDetail() {
               </NavLink>
             </div>
           </nav>
-          <Outlet />
+          <div className="hvd-subcontent">
+            <Outlet />
+          </div>
         </section>
       ) : (
         <p>Loading van details...</p>
