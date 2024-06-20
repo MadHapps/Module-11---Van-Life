@@ -44,20 +44,20 @@ export default function HostVanDetail() {
           <nav className="hvd-navbar">
             <div className="link-wrapper hvd-links">
               <NavLink
-                to={`/host/vans/${id}`}
+                to={"."}
                 end
                 className={({ isActive }) => (isActive ? "isActive" : null)}
               >
                 Details
               </NavLink>
               <NavLink
-                to={`/host/vans/${id}/pricing`}
+                to={"pricing"}
                 className={({ isActive }) => (isActive ? "isActive" : null)}
               >
                 Pricing
               </NavLink>
               <NavLink
-                to={`/host/vans/${id}/photos`}
+                to={"photos"}
                 className={({ isActive }) => (isActive ? "isActive" : null)}
               >
                 Photos

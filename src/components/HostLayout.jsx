@@ -8,7 +8,7 @@ export default function HostLayout() {
       <nav className="host-nav-wrapper">
         <div className="link-wrapper">
           <NavLink
-            to="/host"
+            to="."
             end
             className={({ isActive }) => (isActive ? "isActive" : null)}
           >
