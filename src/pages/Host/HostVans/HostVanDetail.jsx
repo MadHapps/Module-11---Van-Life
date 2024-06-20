@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import VanContext from "../../../components/VanContext";
+import { useOutletContext } from "react-router-dom";
 
 export default function HostVanDetail() {
-  const { van, type } = useContext(VanContext);
+  const [van, tag] = useOutletContext();
   const { name, description } = van;
 
   return (
@@ -11,7 +10,7 @@ export default function HostVanDetail() {
         <span>Name:</span> {name}
       </p>
       <p>
-        <span>Category:</span> {type}
+        <span>Category:</span> {tag}
       </p>
       <p>
         <span>Description:</span> {description}

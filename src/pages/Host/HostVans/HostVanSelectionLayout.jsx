@@ -3,7 +3,6 @@ import "../../../components/styling/VanCard.css";
 import { useEffect, useState } from "react";
 import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { VanProvider } from "../../../components/VanContext";
 
 export default function HostVanDetail() {
   const { id } = useParams();
@@ -15,7 +14,6 @@ export default function HostVanDetail() {
       const data = await res.json();
       setVan(data.vans);
     };
-
     fetchVan();
   }, [id]);
 
@@ -65,9 +63,7 @@ export default function HostVanDetail() {
             </div>
           </nav>
           <div className="hvd-subcontent">
-            <VanProvider van={van} type={tag}>
-              <Outlet />
-            </VanProvider>
+            <Outlet context={[van, tag]} />
           </div>
         </section>
       ) : (

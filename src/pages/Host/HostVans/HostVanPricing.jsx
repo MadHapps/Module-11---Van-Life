@@ -1,10 +1,9 @@
 
-import { useContext } from "react";
-import VanContext from "../../../components/VanContext";
+import { useOutletContext } from "react-router-dom";
 
 export default function HostVanPricing() {
-  const { van } = useContext(VanContext);
-  const { price } = van;
+    const [van] = useOutletContext();
+    const { price } = van;
 
     return (
         <>
