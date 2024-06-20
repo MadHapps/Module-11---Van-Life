@@ -23,7 +23,7 @@ export default function HostVanDetail() {
 
   return (
     <>
-      <Link className="hvd-back-btn" to={"/host/vans"}>
+      <Link className="hvd-back-btn" to={".."} relative="path">
         <FaArrowLeftLong /> Back to all vans
       </Link>
       {van ? (
