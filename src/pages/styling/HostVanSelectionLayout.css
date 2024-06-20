@@ -67,4 +67,24 @@ img.hvd-image {
 .hvd-subcontent {
     grid-row: 3/4;
     grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    p {
+        span {
+            font-weight: 700;
+        }
+        font-weight: 550;
+    }
+
+    img {
+        border-radius: .25em;
+    }
+}
+
+@media (min-width: 550px) {
+    section.hvd-content-wrapper {
+       width: 550px;
+    }
 }

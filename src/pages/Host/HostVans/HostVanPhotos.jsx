@@ -1,7 +1,13 @@
 
+import { useContext } from "react";
+import VanContext from "../../../components/VanContext";
+
 export default function HostVanPhotos() {
+  const { van } = useContext(VanContext);
 
     return (
-        <h3>HostVanPhotos~!</h3>
+        <>
+            <img src={van.imageUrl} alt="" />
+        </>
     )
 }

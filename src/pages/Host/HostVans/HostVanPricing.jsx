@@ -1,7 +1,14 @@
 
+import { useContext } from "react";
+import VanContext from "../../../components/VanContext";
+
 export default function HostVanPricing() {
+  const { van } = useContext(VanContext);
+  const { price } = van;
 
     return (
-        <h3>HostVanPricing~!</h3>
+        <>
+            <p><span style={{fontSize: '1.5em'}}>${price}</span>/day</p>
+        </>
     )
 }
