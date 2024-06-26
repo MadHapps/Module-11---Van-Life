@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import "../styling/Vans.css";
 import VanCard from "../../components/VanCard";
+import { useSearchParams } from "react-router-dom";
 
 export default function Vans() {
   const [vans, setVans] = useState(null);
-  const [filteredVans, setFilteredVans] = useState(null);
-  const [filter, setFilter] = useState(null);
+  const [displayedVans, setDisplayedVans] = useState(null);
+  const [filterParams, setFilterParams] = useSearchParams();
 
   useEffect(() => {
     const fetchVans = async () => {
@@ -14,8 +15,8 @@ export default function Vans() {
         const data = await response.json();
         setTimeout(() => {
           setVans(data.vans);
-          setFilteredVans(data.vans);
-        }, 918);
+          setDisplayedVans(data.vans);
+        }, 500);
       } catch (error) {
         console.error("Error fetching vans:", error);
       }
@@ -25,19 +26,20 @@ export default function Vans() {
   }, []);
 
   useEffect(() => {
-    if (filter) {
-      setFilteredVans(vans.filter((van) => van.type === filter));
+    if (filterParams.get("type") && vans) {
+      setDisplayedVans(vans.filter((van) => van.type === filterParams.get("type")));
     } else {
-      setFilteredVans(vans);
+      setDisplayedVans(vans);
     }
-  }, [filter, vans]);
+
+  }, [filterParams, vans]);
 
   function handleClick(type) {
-    setFilter(type);
+    setFilterParams({type : type});
   }
 
   function clearFilter() {
-    setFilter(null);
+    setFilterParams('')
   }
 
   return (
@@ -47,7 +49,7 @@ export default function Vans() {
         <ul>
           <li
             className={`link-button default filter ${
-              filter === "simple" ? "simple" : ""
+              filterParams.get("type") === "simple" ? "simple" : ""
             }`}
             onClick={() => handleClick("simple")}
           >
@@ -55,7 +57,7 @@ export default function Vans() {
           </li>
           <li
             className={`link-button default filter ${
-              filter === "luxury" ? "luxury" : ""
+              filterParams.get("type") === "luxury" ? "luxury" : ""
             }`}
             onClick={() => handleClick("luxury")}
           >
@@ -63,7 +65,7 @@ export default function Vans() {
           </li>
           <li
             className={`link-button default filter ${
-              filter === "rugged" ? "rugged" : ""
+              filterParams.get("type") === "rugged" ? "rugged" : ""
             }`}
             onClick={() => handleClick("rugged")}
           >
@@ -75,8 +77,8 @@ export default function Vans() {
         </ul>
       </div>
       <div className="van-card-wrapper">
-        {filteredVans ? (
-          filteredVans.map((van) => {
+        {displayedVans ? (
+          displayedVans.map((van) => {
             return (
               <VanCard
                 key={van.id}
