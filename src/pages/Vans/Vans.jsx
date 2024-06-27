@@ -35,11 +35,13 @@ export default function Vans() {
   }, [filterParams, vans]);
 
   function handleClick(type) {
-    setFilterParams({type : type});
-  }
-
-  function clearFilter() {
-    setFilterParams('')
+    setFilterParams(prevParams => {
+      type === null
+        ? prevParams.delete("type")
+        : prevParams.set("type", type)
+      
+      return prevParams
+    });
   }
 
   return (
@@ -71,7 +73,7 @@ export default function Vans() {
           >
             Rugged
           </li>
-          <li className="link-button" onClick={clearFilter}>
+          <li className="link-button" onClick={() => handleClick(null)}>
             Clear filter
           </li>
         </ul>
