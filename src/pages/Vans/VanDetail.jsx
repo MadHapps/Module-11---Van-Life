@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "../styling/VanDetail.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import VanCard from "../../components/VanCard";
+import { FaArrowLeftLong } from "react-icons/fa6";
+
 
 export default function VanDetail() {
   const { id } = useParams();
@@ -19,6 +21,9 @@ export default function VanDetail() {
 
   return (
     <>
+      <Link className="hvd-back-btn" to={".."} relative="path">
+        <FaArrowLeftLong /> Back to all vans
+      </Link>
       {van && (
         <VanCard
           id={van.id}
