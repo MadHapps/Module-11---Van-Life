@@ -27,20 +27,19 @@ export default function Vans() {
 
   useEffect(() => {
     if (filterParams.get("type") && vans) {
-      setDisplayedVans(vans.filter((van) => van.type === filterParams.get("type")));
+      setDisplayedVans(
+        vans.filter((van) => van.type === filterParams.get("type"))
+      );
     } else {
       setDisplayedVans(vans);
     }
-
   }, [filterParams, vans]);
 
   function handleClick(type) {
-    setFilterParams(prevParams => {
-      type === null
-        ? prevParams.delete("type")
-        : prevParams.set("type", type)
-      
-      return prevParams
+    setFilterParams((prevParams) => {
+      type === null ? prevParams.delete("type") : prevParams.set("type", type);
+
+      return prevParams;
     });
   }
 
@@ -73,9 +72,11 @@ export default function Vans() {
           >
             Rugged
           </li>
-          <li className="link-button" onClick={() => handleClick(null)}>
+          { filterParams.get("type") &&
+            <li className="link-button" onClick={() => handleClick(null)}>
             Clear filter
           </li>
+          }
         </ul>
       </div>
       <div className="van-card-wrapper">
