@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import "../styling/VanDetail.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import VanCard from "../../components/VanCard";
 import { FaArrowLeftLong } from "react-icons/fa6";
-
 
 export default function VanDetail() {
   const { id } = useParams();
   const [van, setVan] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchVan = async () => {
@@ -19,11 +19,17 @@ export default function VanDetail() {
     fetchVan();
   }, [id]);
 
+  const search = location.state?.search || "";
+  const type = location.state?.type || "all"
+
   return (
     <>
-      <Link className="hvd-back-btn" to={".."} relative="path">
-        <FaArrowLeftLong /> Back to all vans
-      </Link>
+      {van?.type && (
+        <Link className="hvd-back-btn" to={`..?${search}`} relative="path">
+          <FaArrowLeftLong />
+          Back to {type} vans
+        </Link>
+      )}
       {van && (
         <VanCard
           id={van.id}

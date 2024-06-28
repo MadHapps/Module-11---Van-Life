@@ -86,6 +86,7 @@ export default function Vans() {
               <VanCard
                 key={van.id}
                 id={van.id}
+                state={{search: filterParams.toString(), type: filterParams.get("type")}}
                 image={van.imageUrl}
                 name={van.name}
                 price={van.price}
