@@ -20,6 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route element={<Layout />}>
+          <Route path="*" element={<h2>Page cannot be found...</h2>} />
           <Route path="/" element={<Home />} />
           <Route path="/host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
