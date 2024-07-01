@@ -14,13 +14,13 @@ import Reviews from "./pages/Host/Reviews";
 import About from "./pages/About";
 import Vans from "./pages/Vans/Vans";
 import VanDetail from "./pages/Vans/VanDetail";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="*" element={<h2>Page cannot be found...</h2>} />
           <Route path="/" element={<Home />} />
           <Route path="/host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
@@ -36,6 +36,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>
