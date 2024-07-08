@@ -20,7 +20,7 @@ export default function VanDetail() {
   }, [id]);
 
   const search = location.state?.search || "";
-  const type = location.state?.type || "all"
+  const type = location.state?.type || "all";
 
   return (
     <>

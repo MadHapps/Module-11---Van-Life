@@ -13,10 +13,14 @@ export default function VanCard({
   details,
 }) {
   const tag = type.charAt(0).toUpperCase() + type.slice(1);
-  const VanCard = details ? 'div' : Link;
+  const VanCard = details ? "div" : Link;
 
   return (
-    <VanCard to={`/vans/${id}`} state={state} className={`van-card ${details ? "details" : ""}`}>
+    <VanCard
+      to={`/vans/${id}`}
+      state={state}
+      className={`van-card ${details ? "details" : ""}`}
+    >
       <img className="card-img" src={image} alt={name} />
       <div className="card-title-wrapper">
         <h3 className="card-title">{name}</h3>
