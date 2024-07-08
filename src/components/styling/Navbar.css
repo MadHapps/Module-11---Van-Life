@@ -19,6 +19,11 @@ nav .link-wrapper {
   justify-content: center;
   gap: 1em;
   height: fit-content;
+
+  .user-icon {
+    vertical-align: middle;
+  }
+  
 }
 
 nav a {
