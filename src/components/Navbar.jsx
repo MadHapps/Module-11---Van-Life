@@ -6,9 +6,9 @@ import { FaRegUserCircle } from "react-icons/fa";
 export default function Navbar({ className }) {
   return (
     <nav className={className}>
-      < Link to="/" className="logo" role="banner">
+      <Link to="/" className="logo" role="banner">
         #VANLIFE
-      </ Link>
+      </Link>
       <div className="link-wrapper">
         <NavLink
           to="/host"
@@ -30,6 +30,7 @@ export default function Navbar({ className }) {
         </NavLink>
         <NavLink
           to="/login"
+          end
           className={({ isActive }) => (isActive ? "isActive" : null)}
         >
           <FaRegUserCircle className="user-icon" />
