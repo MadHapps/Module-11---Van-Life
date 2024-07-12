@@ -13,10 +13,8 @@ export default function Vans() {
       try {
         const response = await fetch("/api/vans");
         const data = await response.json();
-        setTimeout(() => {
-          setVans(data.vans);
-          setDisplayedVans(data.vans);
-        }, 500);
+        setVans(data.vans);
+        setDisplayedVans(data.vans);
       } catch (error) {
         console.error("Error fetching vans:", error);
       }
@@ -72,11 +70,11 @@ export default function Vans() {
           >
             Rugged
           </li>
-          { filterParams.get("type") &&
+          {filterParams.get("type") && (
             <li className="link-button" onClick={() => handleClick(null)}>
-            Clear filter
-          </li>
-          }
+              Clear filter
+            </li>
+          )}
         </ul>
       </div>
       <div className="van-card-wrapper">
@@ -86,7 +84,10 @@ export default function Vans() {
               <VanCard
                 key={van.id}
                 id={van.id}
-                state={{search: filterParams.toString(), type: filterParams.get("type")}}
+                state={{
+                  search: filterParams.toString(),
+                  type: filterParams.get("type"),
+                }}
                 image={van.imageUrl}
                 name={van.name}
                 price={van.price}
