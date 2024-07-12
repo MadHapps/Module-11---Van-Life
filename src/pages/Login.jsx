@@ -1,17 +1,20 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { loginUser } from "../api";
 import "./styling/Login.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login({ logInOut }) {
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
   });
-  const location = useLocation();
   const [loginState, setLoginState] = useState("idle");
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const destination = location.state?.from || "/host";
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,6 +26,9 @@ export default function Login() {
         console.log("Login successful:", data);
         setLoginState("idle");
         setError(null);
+        localStorage.setItem("isLoggedIn", true);
+        logInOut();
+        navigate(destination, { replace: true });
       })
       .catch((error) => {
         console.log("Login error:", error);
@@ -30,7 +36,7 @@ export default function Login() {
         setError(error);
       });
   }
-  
+
   useEffect(() => {
     console.log("Login status:", loginState);
     loginState === "submitting" ? setSubmitting(true) : setSubmitting(false);
@@ -50,9 +56,7 @@ export default function Login() {
         <h2 className="state-message">{location.state.message}</h2>
       )}
       <h1>Sign in to your account</h1>
-      {error?.message && (
-        <h3 className="state-message">{error.message}</h3>
-      )}
+      {error?.message && <h3 className="state-message">{error.message}</h3>}
       <form onSubmit={handleSubmit} className="login-form">
         <input
           type="text"

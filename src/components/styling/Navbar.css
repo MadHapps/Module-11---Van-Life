@@ -20,10 +20,9 @@ nav .link-wrapper {
   gap: 1em;
   height: fit-content;
 
-  .user-icon {
+  .account-icon {
     vertical-align: middle;
   }
-  
 }
 
 nav a {

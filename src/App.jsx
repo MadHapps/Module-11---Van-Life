@@ -17,12 +17,25 @@ import VanDetail from "./pages/Vans/VanDetail";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import AuthRequired from "./components/AuthRequired";
+import { useState } from "react";
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(JSON.parse(localStorage.getItem("isLoggedIn")) || false)
+
+  function logInOut() {
+    setIsLoggedIn(prev => {
+      const newValue = !prev
+      localStorage.setItem("isLoggedIn", newValue)
+      return newValue
+    })
+  }
+
+
   return (
     <Router>
       <Routes>
-        <Route element={<Layout />}>
+        <Route element={<Layout isLoggedIn={isLoggedIn} logInOut={logInOut} />}>
           <Route path="/" element={<Home />} />
            <Route element={<AuthRequired />}>
               <Route path="/host" element={<HostLayout />}>
@@ -40,7 +53,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login logInOut={logInOut} />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
