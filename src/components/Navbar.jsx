@@ -3,11 +3,29 @@ import "./styling/Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import LogOutModal from "./LogOutModal";
+import ModalWrapper from "./ModalWrapper";
 
 export default function Navbar({ className, isLoggedIn, logInOut }) {
   const [showModal, setShowModal] = useState(false);
+
+  // Ref for the modal wrapper div
+  const modalRef = useRef(null);
+
+  // Close modal when clicking outside of it
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setShowModal(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   function handleClick() {
     setShowModal((prev) => !prev);
@@ -49,8 +67,11 @@ export default function Navbar({ className, isLoggedIn, logInOut }) {
           <IoMdExit onClick={handleClick} className="account-icon" />
         )}
       </div>
+      {/* Modal using portal */}
       {showModal && (
-        <LogOutModal logInOut={logInOut} showModal={setShowModal} />
+        <ModalWrapper modalRef={modalRef}>
+          <LogOutModal logInOut={logInOut} showModal={setShowModal} />
+        </ModalWrapper>
       )}
     </nav>
   );

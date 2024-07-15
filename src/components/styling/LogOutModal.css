@@ -3,7 +3,7 @@
     right: 0;
     top: 0;
     margin: 4em 2em;
-    padding: 1em;
+    padding: .5em 1em;
     display: grid;
     place-content: center;
     max-width: 500px;
@@ -11,4 +11,9 @@
     background-color: #282828a8;
     color: whitesmoke;
     border-radius: .25em;
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: .33em;
+    }
 }
