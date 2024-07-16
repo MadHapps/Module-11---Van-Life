@@ -2,36 +2,35 @@ import { useEffect, useState } from "react";
 import "../styling/Vans.css";
 import VanCard from "../../components/VanCard";
 import { useSearchParams } from "react-router-dom";
+import { getVans } from "../../api";
 
 export default function Vans() {
   const [vans, setVans] = useState(null);
-  const [displayedVans, setDisplayedVans] = useState(null);
   const [filterParams, setFilterParams] = useSearchParams();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const typeFilter = filterParams.get("type");
 
   useEffect(() => {
-    const fetchVans = async () => {
+    async function fetchVans() {
+      setIsLoading(true);
       try {
-        const response = await fetch("/api/vans");
-        const data = await response.json();
-        setVans(data.vans);
-        setDisplayedVans(data.vans);
+        const data = await getVans();
+        setVans(data);
       } catch (error) {
+        setError(error);
         console.error("Error fetching vans:", error);
+      } finally {
+        setIsLoading(false);
       }
-    };
+    }
 
     fetchVans();
   }, []);
 
-  useEffect(() => {
-    if (filterParams.get("type") && vans) {
-      setDisplayedVans(
-        vans.filter((van) => van.type === filterParams.get("type"))
-      );
-    } else {
-      setDisplayedVans(vans);
-    }
-  }, [filterParams, vans]);
+  const displayedVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans;
 
   function handleClick(type) {
     setFilterParams((prevParams) => {
@@ -39,6 +38,14 @@ export default function Vans() {
 
       return prevParams;
     });
+  }
+
+  if (isLoading) {
+    return <h1>Loading...</h1>
+  }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>
   }
 
   return (
