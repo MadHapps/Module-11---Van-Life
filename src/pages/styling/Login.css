@@ -1,59 +1,58 @@
 .login-page-wrapper {
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 
-    .state-message {
-        color: red;
-        font-weight: 500;
-        letter-spacing: -1px;
-    }
+  .state-message {
+    color: red;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
 }
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    min-width: 280px;
-    max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  min-width: 280px;
+  max-width: 500px;
 
+  input {
+    border: 1px solid grey;
+    padding: 0.75em;
+    border-radius: 0.33em;
+    font-size: 1em;
+  }
 
-    input {
-        border: 1px solid grey;
-        padding: .75em;
-        border-radius: .33em;
-        font-size: 1em;
+  input:nth-of-type(1) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  input:nth-of-type(2) {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  button {
+    margin-top: 1.5em;
+    padding: 1.25em;
+    background-color: var(--accent-dark);
+    color: var(--font-light);
+    font-weight: 600;
+    border: none;
+    border-radius: 0.33em;
+
+    &:hover {
+      opacity: 0.95;
     }
 
-    input:nth-of-type(1) {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+    &:active {
+      opacity: 0.75;
     }
-
-    input:nth-of-type(2) {
-        border-top: none;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-
-    button {
-        margin-top: 1.5em;
-        padding: 1.25em;
-        background-color: var(--accent-dark);
-        color: var(--font-light);
-        font-weight: 600;
-        border: none;
-        border-radius: .33em;
-
-        &:hover {
-            opacity: .95;
-        }
-
-        &:active {
-            opacity: .75;
-        }
-    }
+  }
 }
