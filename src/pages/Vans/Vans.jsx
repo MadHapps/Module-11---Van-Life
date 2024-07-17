@@ -29,7 +29,7 @@ export default function Vans() {
   }, []);
 
   const displayedVans = typeFilter
-    ? vans.filter((van) => van.type === typeFilter)
+    ? vans?.filter((van) => van.type === typeFilter)
     : vans;
 
   function handleClick(type) {
