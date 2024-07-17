@@ -12,7 +12,7 @@ export default function VanCard({
   type,
   details,
 }) {
-  const tag = type.charAt(0).toUpperCase() + type.slice(1);
+  const tag = type?.charAt(0).toUpperCase() + type?.slice(1);
   const VanCard = details ? "div" : Link;
 
   return (

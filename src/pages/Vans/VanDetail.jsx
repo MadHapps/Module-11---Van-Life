@@ -3,7 +3,7 @@ import "../styling/VanDetail.css";
 import { Link, useLocation, useParams } from "react-router-dom";
 import VanCard from "../../components/VanCard";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { getVans } from "../../api";
+import { getVan } from "../../api";
 
 export default function VanDetail() {
   const { id } = useParams();
@@ -16,7 +16,7 @@ export default function VanDetail() {
     async function fetchVan() {
       setIsLoading(true)
       try { 
-        const data = await getVans(id);
+        const data = await getVan(id);
         setVan(data);
       } catch(error) {
         setError(error)
@@ -25,7 +25,6 @@ export default function VanDetail() {
         setIsLoading(false)
       }
     }
-
     fetchVan();
   }, [id]);
 
@@ -51,7 +50,7 @@ export default function VanDetail() {
       )}
       {van && (
         <VanCard
-          id={van.id}
+          id={id}
           image={van.imageUrl}
           name={van.name}
           price={van.price}

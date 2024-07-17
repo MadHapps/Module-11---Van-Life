@@ -3,21 +3,39 @@ import "../../../components/styling/VanCard.css";
 import { useEffect, useState } from "react";
 import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { getVan } from "../../../api";
 
 export default function HostVanDetail() {
   const { id } = useParams();
   const [van, setVan] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchVan = async () => {
-      const res = await fetch(`/api/vans/${id}`);
-      const data = await res.json();
-      setVan(data.vans);
-    };
+    async function fetchVan() {
+      setIsLoading(true)
+      try { 
+        const data = await getVan(id);
+        setVan(data);
+      } catch(error) {
+        setError(error)
+        console.error("Error fetching vans:", error);
+      } finally {
+        setIsLoading(false)
+      }
+    }
     fetchVan();
   }, [id]);
 
   const tag = van ? van.type.charAt(0).toUpperCase() + van.type.slice(1) : null;
+
+  if (isLoading) {
+    return <h1>Loading...</h1>
+  }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>
+  }
 
   return (
     <>

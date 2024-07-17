@@ -1,15 +1,15 @@
 import "../../styling/HostVans.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getHostVans } from "../../../api";
 
 export default function HostVans() {
   const [hostVans, setHostVans] = useState(null);
 
   useEffect(() => {
     const fetchHostVans = async () => {
-      const res = await fetch("/api/host/vans");
-      const data = await res.json();
-      setHostVans(data.vans);
+      const data = await getHostVans();
+      setHostVans(data);
     };
 
     fetchHostVans();
